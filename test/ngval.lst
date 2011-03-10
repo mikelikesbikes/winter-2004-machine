@@ -1,0 +1,17 @@
+                                (   1) Data           .ORIG  
+                                (   2)         .EXT    X   
+                                (   3)         .ENT    V   
+(0000) 0002  0000000000000010 (   4) V              .FILL   #2
+(0001) F043  1111000001000011   (   5)                TRAP    x43  
+(0002) F025  1111000000100101   (   6) Done           TRAP    x25  
+(0003) 2204  0010001000000100   (   7)                LD      R1 =#1 
+                                (   8)                .END    Done
+(0004) 0001  0000000000000001 ( lit)
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+Data            0x0000   REL
+Done            0x0002   REL

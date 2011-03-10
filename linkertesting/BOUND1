@@ -1,0 +1,26 @@
+;Filename: BOUND1
+;directions: none
+;Testing itmes;
+;1.  program length in header = 512
+
+Rmain  00000200
+T00009abc
+E0089
+
+results:
+HMAIN  00000200
+T00009ABC
+E0089
+
+% IGYW -link ../linkertesting/BOUND2 -o ../linkertesting/out.o
+...No errors in input files...
+
+Please enter the relocation start address (in hex)
+valid hex range: [0000, 0000]
+0
+
+...File created successfully...
+
+conclusions:
+-behaves correctly with length =512 
+-relocation range is correct

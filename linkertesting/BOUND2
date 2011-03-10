@@ -1,0 +1,26 @@
+;Filename: BOUND2
+;directions: none
+;Testing itmes;
+;1.  program length in header = 513
+
+Rmain  00000201
+T00009abc
+E0089
+
+results:
+
+link ERROR: #5
+        Program length greater than one page.
+        FILE: main      LINE: 6
+link ERROR: #23
+        No end record.
+        FILE: main  
+link ERROR: #16
+        Linked programs do not fit on one page.
+        total length is: 513
+...3 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusion:
+ERROR #5 is asserted correctly
+

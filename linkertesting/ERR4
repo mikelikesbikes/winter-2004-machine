@@ -1,0 +1,37 @@
+;Filename: ERR4
+;directions: link with ERR3
+;Testing items:
+;1.  link ERROR #22
+;2.  link ERROR #23
+
+
+RMAINn 00000008
+X00000000
+Y00010002
+
+results:
+
+ IGYW -link ../linkertesting/ERR3 ../linkertesting/ERR4 -o ../linkertesting/out.o
+link ERROR: #6
+        Multiple header records.  This line will be skipped.
+        FILE: main      LINE: 9
+link ERROR: #20
+        Start address not between [segment load address] and [segment load address + segment length].
+        FILE: main      LINE: 10
+link ERROR: #22
+        Relocatable record with symbol missing a symbol.
+        FILE: MAINn     LINE: 9
+link ERROR: #22
+        Relocatable record with symbol missing a symbol.
+        FILE: MAINn     LINE: 10
+link ERROR: #23
+        No end record.
+        FILE: MAINn 
+...5 Error(s) in input files... 
+...Output file will not be generated...
+
+
+
+conclusions:
+
+the error messages were properly generated

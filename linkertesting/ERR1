@@ -1,0 +1,113 @@
+;Filename: ERR1
+;directions: link with ERR2
+;Testing items:
+;1.  link ERROR #1
+;2.  link ERROR #2
+;3.  link ERROR #3
+;4.  link ERROR #8
+;5.  link ERROR #9
+;6.  link ERROR #10
+;7.  link ERROR #11
+;8.  link ERROR #18
+;9.  link ERROR #17
+;10. link ERROR #19
+;11. link ERROR #13
+;more than ~20 errors
+
+dfg
+asdfasg
+aga
+
+RERR1\200000008
+Nsymbol=0001
+Nsym2=0003
+Njenn=0FFF
+Nanothe=0003
+Noops=0005
+T000000x
+X00050006jennifer
+S78902345
+Nme=0002
+a;odif
+apdf
+pakdf
+pakdf
+padkjf
+apkdf
+E0001
+E0002
+
+
+results:
+% IGYW -link ../linkertesting/ERR1 ../linkertesting/ERR2 -o ../linkertesting/out.o
+link ERROR: #13
+        Invalid character at line start.
+        FILE:   LINE: 16
+link ERROR: #13
+        Invalid character at line start.
+        FILE:   LINE: 17
+link ERROR: #13
+        Invalid character at line start.
+        FILE:   LINE: 18
+link ERROR: #18
+        Entry point value not between [segment load address] and [segment load address + segment length].
+        FILE: ERR1\2    LINE: 23
+link ERROR: #8
+        Greater than 4 entry points. Entry point will not used. 
+        FILE: ERR1\2    LINE: 25
+link ERROR: #1
+        Character expected, newline received.
+        FILE: ERR1\2    LINE: 26
+link ERROR: #2
+        String contains non-hex characters.
+        FILE: ERR1\2    LINE: 26
+link ERROR: #10
+        External symbol 'jennifer' greater than 6 characters long.
+        FILE: ERR1\2    LINE: 27
+link ERROR: #19
+        Address not between [segment load address] and [segment load address + segment length].
+        FILE: ERR1\2    LINE: 28
+link ERROR: #9
+        Entry points must be declared prior to all text records.
+        FILE: ERR1\2    LINE: 29
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 30
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 31
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 32
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 33
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 34
+link ERROR: #13
+        Invalid character at line start.
+        FILE: ERR1\2    LINE: 35
+link ERROR: #11
+        END record already declared.
+        FILE: ERR1\2    LINE: 37
+link ERROR:#3
+        Second segment name declaration.  This segment will not be used as an entry point.
+        FILE: ERR1\2    LINE: 12
+link ERROR: #6
+        Multiple header records.  This line will be skipped.
+        FILE: ERR1\2    LINE: 13
+link ERROR: #7
+        Duplicate entry points defined.  Value of first entry point taken.
+        FILE: ERR1\2    LINE: 14
+link ERROR: #23
+        No end record.
+        FILE: ERR1\2
+link ERROR: #17
+        MAIN undefined.
+...22 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+-error messages were correctly generated
+-error counter worked

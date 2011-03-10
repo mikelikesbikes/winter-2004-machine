@@ -1,0 +1,22 @@
+                                (   1) MAIN           .ORIG  
+                                (   2)         .EXT    inc   
+(0000) 0004  0000000000000100 (   3) X              .FILL   #4
+(0001) 2000  0010000000000000   (   4) Begin          LD      R0 X 
+(0002) 1236  0001001000110110   (   5) loop           ADD     R1 R0 #-10
+(0003) 0606  0000011000000110   (   6)                BRZP    Done  
+(0004) 4800  0100100000000000 X (   7)                JSR     inc  
+(0005) 0E02  0000111000000010   (   8)                BRNZP   loop  
+(0006) F031  1111000000110001   (   9) Done           TRAP    x31  
+(0007) F025  1111000000100101   (  10)                TRAP    x25  
+                                (  11)                .END    Begin
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+MAIN            0x0000   REL
+X               0x0000   REL
+Begin           0x0001   REL
+loop            0x0002   REL
+Done            0x0006   REL

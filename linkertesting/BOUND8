@@ -1,0 +1,30 @@
+;Filename: BOUND8
+;directions: none
+;Testing items:
+;1.  borderline entry point value; ERROR #18 should be asserted
+;2.  borderline address; ERROR #19 should be asserted
+;3.  borderline start address: ERROR #20 should be asserted
+Rmain  00000005
+Nsym=0005;
+T00051234
+T00018833
+E0005
+
+results:
+
+IGYW -link ../linkertesting/BOUND8 -o ../linkertesting/out.o
+link ERROR: #18
+        Entry point value not between [segment load address] and [segment load address + segment length].
+        FILE: main      LINE: 8
+link ERROR: #19
+        Address not between [segment load address] and [segment load address + segment length].
+        FILE: main      LINE: 9
+link ERROR: #20
+        Start address not between [segment load address] and [segment load address + segment length].
+        FILE: main      LINE: 11
+...3 Error(s) in input files... 
+...Output file will not be generated...
+
+
+;conclusions:
+;the error messages were asserted properly

@@ -1,0 +1,29 @@
+;Filename: ERR11
+;directions: 
+;Testing items: 
+;1.  link ERROR: #24 should be asserted
+
+E0000
+T00000000
+
+
+results:
+
+% IGYW -link ../linkertesting/ERR11 -o ../linkertesting/out.o
+link ERROR: #24
+        Header record undefined.
+        FILE:   LINE: 6
+link ERROR: #23
+        No end record.
+        FILE: 
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+link ERROR: #17
+        MAIN undefined.
+...4 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+
+-Error #24 was correctly asserted.  
+-It caused ERRORS #23, #27

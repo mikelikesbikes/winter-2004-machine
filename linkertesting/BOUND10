@@ -1,0 +1,26 @@
+;Filename: BOUND10
+;directions:none
+;Testing itmes;
+;1.  boundary case for ERROR #28; no error should be generated
+;2.  boundary case for ERROR #29; no error should be generated
+
+RMaIN  00000020
+S0000001f
+L0001001f
+E0000
+
+results:
+
+IGYW -link ../linkertesting/BOUND10  -o ../linkertesting/out.o...No errors in input files...
+
+Please enter the relocation start address (in hex)
+valid hex range: [0000, 01E0]
+23
+
+...File created successfully...
+
+
+
+conclusions:
+
+no error message is generated when the value is the max

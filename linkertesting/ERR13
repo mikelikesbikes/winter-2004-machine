@@ -1,0 +1,19 @@
+;Filename: ERR13
+;directions: none
+;Testing items:
+;1. link ERROR #27 should be asserted
+
+RMain  00000001
+Nsymbol=0000
+E0000
+
+;results:
+
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+...1 Error(s) in input files... 
+...Output file will not be generated...
+
+
+;conclusions:
+;error message is asserted properly

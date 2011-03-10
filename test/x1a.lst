@@ -1,0 +1,14 @@
+                                (   1) lib            .ORIG  
+                                (   2)         .ENT    one two three four
+(0000) 0001  0000000000000001 (   3) one            .FILL   #1
+(0001) 0002  0000000000000010 (   4) two            .FILL   #2
+(0002) 0003  0000000000000011 (   5) three          .FILL   #3
+(0003) 0004  0000000000000100 (   6) four           .FILL   #4
+                                (   7)                .END    
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+lib             0x0000   REL

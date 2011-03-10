@@ -1,0 +1,29 @@
+;Filename: ERR14
+;directions: 
+;Testing items: 
+;1.  link ERROR: #28 should be asserted
+;2.  link ERROR: #28 should be asserted
+
+Rmain  00000012
+S00008888
+L00019999
+E0000
+
+
+results:
+
+% IGYW -link ../linkertesting/ERR14 -o ../linkertesting/out.o
+link ERROR #28
+        Bits 0-8 of 'S' record are not within the footprint.
+        FILE: main      LINE: 8
+link ERROR #29
+        Bits 0-15 of 'L' record are not within the footprint.
+        FILE: main      LINE: 9
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+...3 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+-the error messages were correctly asserted.
+-they caused ERROR #27

@@ -1,0 +1,46 @@
+;Filename: ERR10
+;directions: 
+;Testing items: 
+;1.  link ERROR: #15
+;2.  link WARNING: #1
+;3.  link WARNING: #2
+
+Rmain  00000009
+Njen=0000
+Nla=0001
+T00001234
+X00071234oops
+X00012452jen
+Y0002defala
+S00030000
+L00040000
+E0000
+
+;results:
+
+% IGYW -link ../linkertesting/ERR10 -o ../linkertesting/out.o
+...No errors in input files...
+
+Please enter the relocation start address (in hex)
+valid hex range: [0000, 01F7]
+1f7
+link ERROR: #15
+        External symbol 'oops' undefined.
+        FILE: main      LINE: 12
+link WARNING: #1
+        Bits 0-8 of 'X' record not zero.
+        They will be set to zero before relocation.
+        FILE: main      LINE: 13
+link WARNING: #2
+        Bits 0-15 of 'Y' record not zero.
+        They will be set to zero before relocation.
+        FILE: main      LINE: 14
+...2 Warning(s) in generation of output file... 
+...Output file may not be correct..
+
+...1 Error(s) in generation of output file... 
+...Output file may not be correct...
+
+
+;conclusions:
+;the errors and warnings were asserted correctly

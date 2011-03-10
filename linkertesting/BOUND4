@@ -1,0 +1,32 @@
+;Filename: BOUND4
+;directions: none
+;Testing items:
+;1.  4 valid entry points are allowed
+
+Rmain  00000005
+Nsymbol=0000
+Ntwo=0001
+Nthree=0002
+Nfour=0003
+T00001234
+E0000
+
+;results:
+
+% IGYW -link ../linkertesting/BOUND4 -o ../linkertesting/out.o
+...No errors in input files...
+
+Please enter the relocation start address (in hex)
+valid hex range: [0000, 01FB]
+0000
+
+
+% more ../linkertesting/out.o
+HMAIN  00000005
+T00001234
+E0000
+...File created successfully...
+
+
+conclusions:
+four entry points can be defined.

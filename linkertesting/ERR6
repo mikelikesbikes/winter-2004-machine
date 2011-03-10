@@ -1,0 +1,25 @@
+;Filename: ERR6
+;directions: none
+;Testing items:
+;1.  link ERROR #4 should be asserted
+
+Rmain  00020008
+
+results:
+
+IGYW -link ../linkertesting/ERR6 -o ../linkertesting/out.o
+link ERROR: #4
+        Relocatable program load address must be zero.
+        FILE: main      LINE: 6
+link ERROR: #23
+        No end record.
+        FILE: main  
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+...3 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+-ERROR # 4 was correctly asserted
+-this caused error #23
+-ERROR #27 was also correctly asserted

@@ -1,0 +1,25 @@
+;Filename: BOUND5
+;directions: none
+;Testing items:
+;1.  5 valid entry points are not allowed
+
+Rmain  00000005
+Nsymbol=0000
+Ntwo=0001
+Nthree=0002
+Nfour=0003
+Nfive=0005
+T00001234
+E0000
+
+;results:
+
+IGYW -link ../linkertesting/BOUND5 -o ../linkertesting/out.o
+link ERROR: #8
+        Greater than 4 entry points. Entry point will not used. 
+        FILE: main      LINE: 11
+...1 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+5 entry points are not allowed

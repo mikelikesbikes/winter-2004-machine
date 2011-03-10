@@ -1,0 +1,13 @@
+                                (   4) stupid         .ORIG  
+                                (   5)         .ENT    one two negone 
+(0000) 0001  0000000000000001 (   6) one            .FILL   #1
+(0001) 0002  0000000000000010 (   7) two            .FILL   #2
+(0002) FFFF  1111111111111111 (   8) negone         .FILL   #-1
+                                (   9)                .END    
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+stupid          0x0000   REL

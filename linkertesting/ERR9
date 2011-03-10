@@ -1,0 +1,30 @@
+;Filename: ERR9
+;directions: link with ERR8
+;Testing items: 
+;1.  link ERROR: #16 should be asserted
+
+Rmain  00000001
+T00001234
+E0000
+
+
+results:
+
+ IGYW -link ../linkertesting/ERR9 ../linkertesting/ERR8 -o ../linkertesting/out.o
+link ERROR: #20
+        Start address not between [segment load address] and [segment load address + segment length].
+        FILE: mainxx    LINE: 531
+link ERROR: #14
+        Text records do not fit in the footprint.
+        FILE: mainxx
+        text record length is: 520
+        footprint length is: 512
+link ERROR: #16
+        Linked programs do not fit on one page.
+        total length is: 513
+...3 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+
+-error message was properly asserted

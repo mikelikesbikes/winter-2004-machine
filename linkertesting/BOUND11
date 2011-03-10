@@ -1,0 +1,35 @@
+;Filename: BOUND11
+;directions: none
+;Testing itmes;
+;1.  boundary case for ERROR #28;  error should be generated
+;2.  boundary case for ERROR #29;  error should be generated
+
+
+Rlalala00000015
+S00000015
+L00050015
+E0000
+
+results:
+
+% IGYW -link ../linkertesting/BOUND11 -o ../linkertesting/out.o
+link ERROR #28
+        Bits 0-8 of 'S' record are not within the footprint.
+        FILE: lalala    LINE: 9
+link ERROR #29
+        Bits 0-15 of 'L' record are not within the footprint.
+        FILE: lalala    LINE: 10
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+link ERROR: #17
+        MAIN undefined.
+...4 Error(s) in input files... 
+...Output file will not be generated...
+
+
+conclusions:
+
+-ERROR 28-29 were correctly generated at the first value too large
+-if there is an error in a text record, it will not be read in
+-if there are errors with all text records, ERROR #27 will be asserted
+-ERROR 17 was correct

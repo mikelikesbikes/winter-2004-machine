@@ -1,0 +1,12 @@
+                                (   1) librar         .ORIG  
+                                (   2)         .ENT    inc   
+(0000) 1021  0001000000100001   (   3) inc            ADD     R0 R0 #1
+(0001) D000  1101000000000000   (   4)                RET       
+                                (   5)                .END    
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+librar          0x0000   REL

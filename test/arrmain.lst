@@ -1,0 +1,15 @@
+                                (   1) main           .ORIG  
+                                (   2)         .EXT    arr1 arr2  
+(0000) 3000  0011000000000000 X (   3)                ST      R0 arr1 
+(0001) F031  1111000000110001   (   4)                TRAP    x31  
+(0002) 3000  0011000000000000 X (   5)                ST      R0 arr2 
+(0003) F031  1111000000110001   (   6)                TRAP    x31  
+(0004) F025  1111000000100101   (   7)                TRAP    x25  
+                                (   8)                .END    
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+main            0x0000   REL

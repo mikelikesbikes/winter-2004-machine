@@ -1,0 +1,31 @@
+;Filename: ERR5
+;directions: none
+;Testing items:
+;1.  link ERROR #12
+
+Hwrong 00000000
+
+results:
+
+IGYW -link ../linkertesting/ERR5 -o ../linkertesting/out.o
+link ERROR: #12
+        Program is not relocatable.
+        FILE:   LINE: 6
+link ERROR: #23
+        No end record.
+        FILE: 
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+link ERROR: #17
+        MAIN undefined.
+...4 Error(s) in input files... 
+...Output file will not be generated...
+
+
+
+;conclusions: 
+ 
+-ERROR #12 was asserted correctly
+-ERROR #23 was asserted correctly
+-ERROR #17 was asserted correctly
+-ERROR #27 was asserted

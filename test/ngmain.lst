@@ -1,0 +1,16 @@
+                                (   1) Main           .ORIG  
+                                (   2)         .EXT    Displ V X 
+                                (   3)         .ENT    Start   
+(0000) 4800  0100100000000000 X (   5) Start          JSR     Displ  
+(0001) 2200  0010001000000000 X (   6)                LD      R1 V 
+(0002) 3200  0011001000000000 X (   7)                ST      R1 X 
+(0003) 4800  0100100000000000 X (   8)                JSR     Displ  
+(0004) F025  1111000000100101   (   9)                TRAP    x25  
+                                (  10)                .END    Start
+
+
+       SYMBOL TABLE
+
+Symbol          Value    Rel/Abs
+
+Main            0x0000   REL

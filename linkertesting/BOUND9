@@ -1,0 +1,26 @@
+;Filename: BOUND9
+;directions: none
+;Testing items:
+;1.  borderline entry point value; ERROR #18 should not be asserted
+;2.  borderline address; ERROR #19 should not be asserted
+;3.  borderline start value; ERROR #20 should not be asserted
+
+Rmain  00000005
+Nsym=0004;
+T00041234
+E0004
+
+results:
+% IGYW -link ../linkertesting/BOUND9 -o ../linkertesting/out.o
+...No errors in input files...
+
+Please enter the relocation start address (in hex)
+valid hex range: [0000, 01FB]
+56
+
+...File created successfully...
+
+
+
+;conclusions:
+;executes properly

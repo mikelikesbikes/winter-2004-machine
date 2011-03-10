@@ -1,0 +1,26 @@
+#bin/csh -f
+cd ./install
+if($#argv > 0) then
+    if("$argv[1]" == "clean") then
+		
+	set ofiles = (`find . | nawk '$1 ~ /.o$/ {print $1}' | sort`)
+	foreach file ($ofiles)
+	    echo "deleting ${file}"
+	    rm -f $file
+	end
+
+	cd ../
+	if(-e asm) then
+	    echo "deleting asm"
+	    rm -f asm
+	endif
+    else
+	echo "usage: build [clean]"
+	cd ../
+    endif
+else
+    make
+    chmod -f 775 *.o
+    cd ../
+    chmod -f 775 asm
+endif

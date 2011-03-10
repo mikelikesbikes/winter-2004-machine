@@ -1,0 +1,29 @@
+;Filename: ERR7
+;directions: none
+;Testing items:
+;1.  link ERROR #5
+
+Rmain  00000201
+
+results:
+
+IGYW -link ../linkertesting/ERR7 -o ../linkertesting/out.o
+link ERROR: #5
+        Program length greater than one page.
+        FILE: main      LINE: 6
+link ERROR: #23
+        No end record.
+        FILE: main  
+link ERROR: #27
+        One relocatable program with no text records cannot be relocated.
+link ERROR: #16
+        Linked programs do not fit on one page.
+        total length is: 513
+...4 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+
+-ERROR #5 was correctly asserted
+-it caused ERROR #23
+-eRROR #27 and #16 were also correct

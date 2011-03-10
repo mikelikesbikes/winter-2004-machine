@@ -1,0 +1,32 @@
+;Filename: BOUND3
+;directions: none
+;Testing itmes:
+;1.  external symbol length is 6 characters
+;2.  external symbol length is 7 characters
+;2.  entry point symbol is 6 characters
+;3.  entry point symbol is 7 characters
+
+Rmain  00000003
+Nsymbol=0000
+Nsymbols=0001
+T00009abc
+X00011234jennif
+Y0002abcdjennife
+E0000
+
+results:
+
+% IGYW -link ../linkertesting/BOUND3 -o ../linkertesting/out.o
+link ERROR: #26
+        Entry point symbol length greater than 6
+        FILE: main      LINE: 11
+link ERROR: #10
+        External symbol 'jennife' greater than 6 characters long.
+        FILE: main      LINE: 14
+...2 Error(s) in input files... 
+...Output file will not be generated...
+
+conclusions:
+
+The length checking for entry points and external symbols is correct.
+Symbols can be 6 characters, but not 7.
